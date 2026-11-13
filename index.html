@@ -4,70 +4,1240 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f2f0e9">
-  <meta name="description" content="Unmoved Studios is an independent production studio making films, images, and ideas with feeling.">
-  <title>Unmoved Studios — Make something that moves</title>
+  <meta name="description" content="Unmoved Studios — independent production studio for visual stories, campaigns and moving image.">
+  <title>Unmoved Studios</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{--paper:#f2f0e9;--ink:#17231e;--muted:#737970;--acid:#d5f16a;--orange:#ec6545;--line:rgba(23,35,30,.2);--mono:'DM Mono',monospace;--sans:'DM Sans',sans-serif;--serif:'Playfair Display',serif;--gutter:clamp(20px,5vw,76px)}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background-color:var(--paper);background-image:url('Texturelabs_Paper_300XL.jpg');background-repeat:repeat;background-size:600px auto;color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button{font:inherit;color:inherit}.wrap{padding-inline:var(--gutter)}.eyebrow{font:11px var(--mono);letter-spacing:.08em;text-transform:uppercase}.topbar{height:74px;padding:0 var(--gutter);display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);position:absolute;inset:0 0 auto;z-index:5;color:#fff}.logo{font-size:17px;font-weight:700;letter-spacing:-.07em}.logo span{font-weight:400}.navlinks{display:flex;gap:34px;align-items:center;font-size:12px}.navlinks a{transition:opacity .2s}.navlinks a:hover{opacity:.62}.nav-cta{padding:12px 17px;border:1px solid rgba(255,255,255,.55);border-radius:99px}.menu-toggle{display:none;background:none;border:0;color:inherit;font:11px var(--mono);text-transform:uppercase}
-    .hero{height:min(900px,100svh);min-height:650px;position:relative;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;overflow:hidden;background:#31423b}.hero-image{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.24) 0%,rgba(0,0,0,.03) 35%,rgba(0,0,0,.56) 100%),url('https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=2400&q=85') center 46%/cover;transform:scale(1.02);animation:hero-in 1.2s ease-out both}.hero:after{content:'';position:absolute;inset:0;background:rgba(15,26,21,.14);pointer-events:none}.hero-content{position:relative;z-index:1;padding:0 var(--gutter) clamp(36px,6vw,82px)}.hero-kicker{display:flex;gap:12px;align-items:center;font:11px var(--mono);text-transform:uppercase;letter-spacing:.06em;margin-bottom:24px}.live-dot{height:8px;width:8px;border-radius:50%;background:var(--acid);box-shadow:0 0 15px var(--acid)}h1{font-size:clamp(58px,11vw,160px);line-height:.84;letter-spacing:-.09em;margin:0;max-width:1100px;font-weight:500}.hero-last{font-family:var(--serif);font-style:italic;font-weight:600;letter-spacing:-.085em}.hero-bottom{display:flex;justify-content:space-between;align-items:end;margin-top:38px;gap:30px}.hero-bottom p{font-size:clamp(15px,1.5vw,19px);line-height:1.55;max-width:380px;margin:0}.scroll-cue{font:10px var(--mono);letter-spacing:.08em;text-transform:uppercase;display:flex;gap:12px;align-items:center}.scroll-cue:before{content:'';height:1px;width:48px;background:currentColor}
-    .ticker{overflow:hidden;background:var(--acid);padding:17px 0;white-space:nowrap}.ticker-track{display:flex;width:max-content;animation:marquee 28s linear infinite;font:11px var(--mono);text-transform:uppercase;letter-spacing:.08em}.ticker span{padding:0 24px}.ticker b{font-size:16px;vertical-align:-1px}
-    section{scroll-margin-top:24px}.intro{padding-top:clamp(90px,13vw,180px);padding-bottom:clamp(85px,12vw,165px);display:grid;grid-template-columns:1fr 1.65fr;gap:8vw}.intro-label{display:flex;flex-direction:column;justify-content:space-between}.intro-label .eyebrow{color:var(--muted)}.asterisk{font-size:70px;line-height:1;color:var(--orange)}.intro h2{font-size:clamp(34px,5.2vw,72px);line-height:1.04;letter-spacing:-.065em;font-weight:500;margin:0}.intro h2 em{font-family:var(--serif);font-weight:600}.intro-note{max-width:340px;margin:34px 0 0 auto;font-size:14px;line-height:1.7;color:#565e56}
-    .work{padding-bottom:clamp(90px,12vw,160px)}.section-head{display:flex;justify-content:space-between;align-items:end;border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:28px}.section-head h2{font-size:clamp(38px,6vw,76px);letter-spacing:-.075em;font-weight:500;line-height:.9;margin:0}.section-head p{font:10px var(--mono);text-transform:uppercase;color:var(--muted);margin:0 0 4px}.filters{display:flex;gap:8px;margin:0 0 30px}.filter{border:1px solid var(--line);background:transparent;border-radius:99px;padding:9px 14px;font:10px var(--mono);text-transform:uppercase;cursor:pointer;transition:background .2s,color .2s,border .2s}.filter:hover,.filter.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}.projects{display:grid;grid-template-columns:1fr 1fr;gap:56px 18px}.project{min-width:0;transition:opacity .25s,transform .25s}.project.hidden{display:none}.project:nth-child(even){margin-top:100px}.project-image{position:relative;overflow:hidden;background:#d6d5ca;aspect-ratio:1.26}.project:nth-child(3n) .project-image{aspect-ratio:1.03}.project-image img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.2,.7,.2,1)}.project:hover .project-image img{transform:scale(1.045)}.project-image:after{content:'↗';position:absolute;right:18px;bottom:18px;width:42px;height:42px;border-radius:50%;background:var(--acid);color:var(--ink);display:grid;place-items:center;font-size:19px;opacity:0;transform:translateY(6px);transition:.25s}.project:hover .project-image:after{opacity:1;transform:none}.project-meta{display:flex;justify-content:space-between;gap:20px;padding-top:14px}.project-title{font-size:19px;letter-spacing:-.04em}.project-type{font:10px var(--mono);text-transform:uppercase;color:var(--muted);padding-top:5px;text-align:right}
-    .manifesto{background:var(--ink);color:var(--paper);padding:clamp(75px,11vw,150px) var(--gutter);position:relative;overflow:hidden}.manifesto:after{content:'U';font-family:var(--serif);font-size:min(75vw,950px);font-weight:700;line-height:.7;color:rgba(242,240,233,.035);position:absolute;right:-.06em;bottom:-.18em;pointer-events:none}.manifesto .eyebrow{color:var(--acid)}.manifesto blockquote{font-size:clamp(38px,7vw,100px);letter-spacing:-.075em;line-height:.98;font-weight:500;max-width:1050px;margin:60px 0 0;position:relative;z-index:1}.manifesto blockquote em{font-family:var(--serif);font-weight:600}.manifesto-byline{display:flex;justify-content:space-between;align-items:end;margin-top:55px;position:relative;z-index:1}.manifesto-byline p{max-width:300px;font-size:13px;line-height:1.7;color:#b9c0b9}.manifesto-byline .eyebrow{color:var(--paper)}
-    .services{padding-top:clamp(90px,12vw,160px);padding-bottom:clamp(100px,13vw,180px)}.services-head{display:flex;justify-content:space-between;align-items:start;margin-bottom:55px}.services-head h2{font-size:clamp(43px,7vw,90px);letter-spacing:-.08em;line-height:.9;margin:0;font-weight:500}.services-head p{font-size:13px;line-height:1.6;color:var(--muted);max-width:250px;margin:0}.service-list{border-top:1px solid var(--line)}.service{display:grid;grid-template-columns:70px 1fr auto;align-items:center;gap:20px;border-bottom:1px solid var(--line);padding:22px 0}.service-num{font:10px var(--mono);color:var(--muted)}.service h3{margin:0;font-size:clamp(22px,3vw,34px);font-weight:500;letter-spacing:-.05em}.service span:last-child{font:10px var(--mono);color:var(--muted);text-transform:uppercase}
-    .contact{background:var(--orange);padding:clamp(70px,10vw,130px) var(--gutter) clamp(44px,6vw,70px)}.contact-top{display:flex;justify-content:space-between;align-items:start}.contact .eyebrow{color:rgba(23,35,30,.7)}.contact h2{font-size:clamp(54px,11vw,150px);line-height:.85;letter-spacing:-.095em;font-weight:500;margin:70px 0 50px;max-width:1100px}.contact h2 em{font-family:var(--serif);font-weight:600}.contact-link{display:inline-flex;align-items:center;gap:20px;border-bottom:1px solid var(--ink);padding-bottom:10px;font-size:18px}.contact-link span{font-size:22px;transition:transform .2s}.contact-link:hover span{transform:translate(4px,-4px)}.footer{margin-top:110px;padding-top:18px;border-top:1px solid rgba(23,35,30,.3);display:flex;justify-content:space-between;gap:24px;font:10px var(--mono);text-transform:uppercase}.footer-links{display:flex;gap:24px}.footer a:hover{text-decoration:underline;text-underline-offset:4px}
-    .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:none}@keyframes marquee{to{transform:translateX(-50%)}}@keyframes hero-in{from{transform:scale(1.09);filter:brightness(.7)}to{transform:scale(1.02);filter:brightness(1)}}
-    @media(max-width:700px){.topbar{height:62px}.navlinks{display:none;position:absolute;top:61px;left:0;right:0;background:var(--ink);padding:26px var(--gutter) 32px;flex-direction:column;align-items:flex-start;gap:22px;font-size:16px}.navlinks.open{display:flex}.nav-cta{border:0;padding:0}.menu-toggle{display:block}.hero{min-height:620px;height:91svh}.hero-image{background-position:57% center}.hero-bottom{align-items:flex-start;flex-direction:column}.scroll-cue{margin-top:8px}.intro{grid-template-columns:1fr;gap:45px}.intro-label{flex-direction:row;align-items:center}.asterisk{font-size:45px}.intro-note{margin-left:0}.section-head{align-items:start;gap:12px;flex-direction:column}.projects{grid-template-columns:1fr;gap:38px}.project:nth-child(even){margin-top:0}.project:nth-child(3n) .project-image{aspect-ratio:1.26}.project-meta{align-items:start}.manifesto-byline{align-items:start;flex-direction:column;gap:10px}.services-head{flex-direction:column;gap:25px}.service{grid-template-columns:36px 1fr;gap:12px}.service span:last-child{grid-column:2}.contact h2{margin:75px 0 40px}.footer{margin-top:80px;flex-wrap:wrap}.footer-links{width:100%;order:-1}.footer span:last-child{margin-left:auto}}
-    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+    :root {
+      --paper: #efeadf;
+      --paper-deep: #e7e0d3;
+      --ink: #151a17;
+      --ink-soft: #3a403d;
+      --line: rgba(21,26,23,0.14);
+      --muted: rgba(21,26,23,0.62);
+      --orange: #c6623a;
+      --copper: #d8a86e;
+      --green: #60725d;
+      --shadow: rgba(15, 18, 17, 0.18);
+      --gutter: clamp(18px, 4vw, 72px);
+      --serif: "Cormorant Garamond", Georgia, serif;
+      --sans: "Inter", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+
+    .page-shell {
+      position: relative;
+      min-height: 100vh;
+      background:
+        linear-gradient(rgba(239,234,223,0.69), rgba(239,234,223,0.69)),
+        repeating-linear-gradient(
+          0deg,
+          rgba(21,26,23,0.012),
+          rgba(21,26,23,0.012) 1px,
+          transparent 1px,
+          transparent 4px
+        );
+    }
+
+    .container {
+      width: min(1440px, calc(100vw - 2 * var(--gutter)));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 60;
+      backdrop-filter: blur(10px);
+      background: rgba(239, 234, 223, 0.64);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topbar-inner {
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      min-width: 0;
+      user-select: none;
+    }
+
+    .brand-mark {
+      font-size: clamp(1.5rem, 1.5vw + 1rem, 2.2rem);
+      font-weight: 800;
+      letter-spacing: -0.09em;
+      line-height: 1;
+      background: linear-gradient(135deg, #373d39 0%, #1a1c1a 24%, #6c533f 58%, #c59a5d 76%, #efe7d4 100%);
+      background-size: 180% 180%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 1px rgba(17,17,17,0.08);
+      animation: metallicShift 10s ease-in-out infinite alternate;
+      transform: translateZ(0);
+    }
+
+    .brand-mark .reg {
+      font-weight: 500;
+      letter-spacing: -0.06em;
+      opacity: 0.82;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: clamp(14px, 1.8vw, 32px);
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .nav a {
+      opacity: 0.8;
+      transition: opacity 0.2s ease;
+    }
+
+    .nav a:hover,
+    .nav a:focus-visible { opacity: 1; }
+
+    .nav-cta {
+      padding: 11px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero {
+      padding: 18px 0 0;
+    }
+
+    .hero-panel {
+      position: relative;
+      min-height: min(860px, calc(100vh - 90px));
+      border: 1px solid var(--line);
+      background: #243028;
+      overflow: hidden;
+      box-shadow: 0 22px 70px rgba(18, 17, 16, 0.08);
+    }
+
+    .hero-image {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(20,20,18,0.56), rgba(20,20,18,0.1) 24%, rgba(20,20,18,0.38)),
+        url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1800&q=80') center center / cover no-repeat;
+      transform: scale(1.02);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(17, 20, 18, 0.08), rgba(17, 20, 18, 0.58));
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      min-height: min(860px, calc(100vh - 90px));
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: clamp(30px, 4vw, 52px) var(--gutter) clamp(42px, 6vw, 84px);
+      color: #f4efe7;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(244, 239, 231, 0.9);
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #d8f16a;
+      box-shadow: 0 0 20px rgba(216,241,106,0.9);
+    }
+
+    .hero h1 {
+      margin: 22px 0 18px;
+      max-width: 1040px;
+      font-size: clamp(3.8rem, 8vw, 9.4rem);
+      line-height: 0.82;
+      letter-spacing: -0.09em;
+      font-weight: 500;
+    }
+
+    .hero h1 .italic {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 600;
+      letter-spacing: -0.06em;
+    }
+
+    .hero-meta {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-top: 14px;
+    }
+
+    .hero-meta p {
+      margin: 0;
+      max-width: 500px;
+      font-size: clamp(1rem, 1.2vw, 1.16rem);
+      line-height: 1.6;
+      color: rgba(244, 239, 231, 0.84);
+    }
+
+    .scroll-tag {
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      color: rgba(244,239,231,0.78);
+    }
+
+    .scroll-tag::after {
+      content: "→";
+      margin-left: 8px;
+    }
+
+    .marquee {
+      overflow: hidden;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: rgba(216, 168, 110, 0.9);
+      color: var(--ink);
+      white-space: nowrap;
+    }
+
+    .marquee-track {
+      display: inline-flex;
+      min-width: max-content;
+      padding: 14px 0;
+      animation: marquee 22s linear infinite;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .marquee-track span {
+      display: inline-flex;
+      align-items: center;
+      gap: 18px;
+      padding-right: 18px;
+    }
+
+    .about {
+      padding: clamp(72px, 10vw, 150px) 0 clamp(60px, 9vw, 120px);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.72fr 1.4fr;
+      gap: clamp(28px, 4vw, 72px);
+      align-items: end;
+    }
+
+    .about-mark {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 220px;
+    }
+
+    .about-mark .large-symbol {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(5rem, 7vw, 8rem);
+      line-height: 0.75;
+      color: var(--orange);
+    }
+
+    .about-copy h2 {
+      margin: 0;
+      font-size: clamp(2.8rem, 5vw, 5.6rem);
+      line-height: 0.9;
+      letter-spacing: -0.08em;
+      font-weight: 500;
+    }
+
+    .about-copy h2 em {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 600;
+      letter-spacing: -0.05em;
+    }
+
+    .about-copy p {
+      margin: 24px 0 0;
+      max-width: 520px;
+      color: var(--ink-soft);
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+
+    .projects {
+      padding: 0 0 clamp(72px, 10vw, 160px);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 20px;
+      padding-bottom: 18px;
+      margin-bottom: 32px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-head h3 {
+      margin: 0;
+      font-size: clamp(3rem, 5vw, 5.6rem);
+      letter-spacing: -0.08em;
+      line-height: 0.9;
+      font-weight: 500;
+    }
+
+    .section-head .counter {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: min(24px, 3vw);
+    }
+
+    .project-card {
+      position: relative;
+      grid-column: span 6;
+      height: 560px;
+      perspective: 2000px;
+      cursor: pointer;
+      transform-style: preserve-3d;
+    }
+
+    .project-card:nth-child(odd) {
+      margin-top: 70px;
+    }
+
+    .project-card.is-flipped .project-outer {
+      transform: rotateY(180deg) rotateX(0deg);
+    }
+
+    .project-outer {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.85s cubic-bezier(0.2, 0.7, 0.2, 1);
+      border-radius: 26px;
+    }
+
+    .project-face {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      overflow: hidden;
+      border-radius: 26px;
+      border: 1px solid rgba(21,26,23,0.08);
+      box-shadow: 0 18px 42px rgba(18, 17, 16, 0.08);
+      background: #c8c4ba;
+    }
+
+    .project-front { z-index: 2; }
+    .project-back {
+      transform: rotateY(180deg);
+      background: rgba(17,19,17,0.97);
+      color: #f4efe7;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 24px 22px 20px;
+    }
+
+    .project-image {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(0.9) contrast(1.04);
+      transition: transform 0.7s ease;
+    }
+
+    .project-card:hover .project-image img,
+    .project-card:focus-within .project-image img {
+      transform: scale(1.04);
+    }
+
+    .project-meta {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 20px 22px 18px;
+      background: linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,0.68));
+      color: #f8f5f0;
+    }
+
+    .project-index {
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      opacity: 0.8;
+    }
+
+    .project-name {
+      font-size: clamp(1.5rem, 1.3vw + 0.8rem, 2.2rem);
+      line-height: 0.96;
+      letter-spacing: -0.08em;
+      font-weight: 500;
+      max-width: 300px;
+    }
+
+    .project-badge {
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      opacity: 0.9;
+    }
+
+    .project-back-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .project-back-index {
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(244,239,231,0.7);
+    }
+
+    .project-back-close {
+      border: 1px solid rgba(244,239,231,0.2);
+      background: rgba(255,255,255,0.02);
+      color: inherit;
+      border-radius: 999px;
+      width: 34px;
+      height: 34px;
+      display: inline-grid;
+      place-items: center;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .project-back h4 {
+      margin: 14px 0 4px;
+      font-size: clamp(2rem, 2vw + 0.7rem, 3.2rem);
+      letter-spacing: -0.08em;
+      line-height: 0.94;
+      font-weight: 500;
+    }
+
+    .project-back p {
+      margin: 0;
+      color: rgba(244,239,231,0.72);
+      line-height: 1.7;
+      font-size: 0.98rem;
+    }
+
+    .project-meta-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .pill {
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(244,239,231,0.18);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(244,239,231,0.82);
+    }
+
+    .project-back-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-top: 20px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(244,239,231,0.14);
+    }
+
+    .project-link {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #f4efe7;
+      opacity: 0.9;
+    }
+
+    .project-link::after { content: "→"; margin-left: 8px; }
+
+    .studio {
+      padding: clamp(40px, 8vw, 90px) 0 0;
+    }
+
+    .studio-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(30px, 4vw, 64px);
+      align-items: start;
+    }
+
+    .studio-intro {
+      border-top: 1px solid var(--line);
+      padding-top: 28px;
+    }
+
+    .studio-intro h3 {
+      margin: 0 0 20px;
+      font-size: clamp(2.8rem, 5vw, 5.6rem);
+      letter-spacing: -0.08em;
+      line-height: 1;
+      font-weight: 500;
+    }
+
+    .studio-intro p {
+      margin: 0;
+      max-width: 480px;
+      color: var(--ink-soft);
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    .process {
+      display: grid;
+      gap: 18px;
+      margin-top: 30px;
+    }
+
+    .process-row {
+      display: grid;
+      grid-template-columns: 40px 1fr auto;
+      align-items: center;
+      gap: 18px;
+      padding: 18px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .process-row:last-child { border-bottom: 1px solid var(--line); }
+
+    .process-number {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .process-row h4 {
+      margin: 0;
+      font-size: clamp(1.5rem, 1.6vw, 2.2rem);
+      letter-spacing: -0.06em;
+      font-weight: 500;
+    }
+
+    .process-row span {
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .manifesto {
+      margin-top: clamp(70px, 10vw, 150px);
+      background: #171a18;
+      color: #f0ece3;
+      padding: clamp(60px, 10vw, 120px) 0;
+    }
+
+    .manifesto-inner {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 34px;
+      align-items: end;
+    }
+
+    .manifesto-copy {
+      max-width: 920px;
+    }
+
+    .manifesto .eyebrow { color: rgba(217, 241, 104, 0.9); }
+    .manifesto .eyebrow::before { background: #d9f16a; }
+
+    .manifesto-copy blockquote {
+      margin: 24px 0 0;
+      font-size: clamp(2.6rem, 5vw, 6.8rem);
+      line-height: 0.88;
+      letter-spacing: -0.08em;
+      font-weight: 500;
+    }
+
+    .manifesto-copy blockquote em {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 600;
+    }
+
+    .manifesto-note {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(240,236,227,0.7);
+      margin-bottom: 2px;
+    }
+
+    .contact {
+      padding: clamp(80px, 12vw, 160px) 0 90px;
+    }
+
+    .contact-shell {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 34px;
+      align-items: end;
+      padding-top: 30px;
+      border-top: 1px solid var(--line);
+    }
+
+    .contact h3 {
+      margin: 0;
+      font-size: clamp(3.2rem, 7vw, 8.6rem);
+      line-height: 0.9;
+      letter-spacing: -0.09em;
+      font-weight: 500;
+    }
+
+    .contact h3 em { font-family: var(--serif); font-style: italic; }
+
+    .contact .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 14px 18px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      justify-self: end;
+      background: rgba(21,26,23,0.02);
+    }
+
+    .footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      border-top: 1px solid var(--line);
+      padding-top: 22px;
+      margin-top: 42px;
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .project-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: none;
+      background: rgba(14,17,16,0.7);
+      backdrop-filter: blur(10px);
+      padding: clamp(18px, 3vw, 38px);
+    }
+
+    .project-modal.open {
+      display: block;
+    }
+
+    .project-modal-panel {
+      width: min(1200px, 100%);
+      margin: 0 auto;
+      height: 100%;
+      background: #f0eadf;
+      border: 1px solid rgba(21,26,23,0.12);
+      box-shadow: 0 24px 80px rgba(0,0,0,0.22);
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      overflow: hidden;
+      border-radius: 26px;
+    }
+
+    .modal-media {
+      min-height: 200px;
+      background: #d9d4ca;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .modal-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .modal-copy {
+      padding: clamp(20px, 3vw, 40px);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .modal-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .modal-index {
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .close-modal {
+      border: 1px solid var(--line);
+      background: transparent;
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    .modal-copy h4 {
+      margin: 0 0 10px;
+      font-size: clamp(2.3rem, 4vw, 4.2rem);
+      letter-spacing: -0.08em;
+      line-height: 0.9;
+      font-weight: 500;
+    }
+
+    .modal-copy .lede {
+      margin: 0 0 20px;
+      font-size: 1.06rem;
+      line-height: 1.8;
+      color: var(--ink-soft);
+    }
+
+    .modal-copy .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 18px 0 22px;
+    }
+
+    .modal-copy .facts {
+      display: grid;
+      gap: 12px;
+      margin-top: auto;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    .fact-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      font-size: 0.76rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .fact-row strong {
+      font-weight: 600;
+      color: var(--ink);
+      letter-spacing: 0;
+      text-transform: none;
+      font-size: 0.94rem;
+    }
+
+    @keyframes metallicShift {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    @media (max-width: 980px) {
+      .project-card { grid-column: span 12; }
+      .project-card:nth-child(odd) { margin-top: 0; }
+      .project-modal-panel { grid-template-columns: 1fr; }
+      .modal-media { min-height: 280px; }
+      .studio-grid, .contact-shell, .manifesto-inner, .about-grid { grid-template-columns: 1fr; }
+      .footer { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (max-width: 760px) {
+      .topbar-inner { height: 68px; }
+      .nav { display: none; }
+      .hero-panel, .hero-content { min-height: 700px; }
+      .hero-meta { flex-direction: column; align-items: flex-start; }
+      .process-row { grid-template-columns: 32px 1fr; }
+      .process-row span { grid-column: 2; }
+      .project-card { height: 480px; }
+      .contact .cta { justify-self: start; }
+    }
   </style>
 </head>
 <body>
-  <header class="topbar">
-    <a class="logo" href="#home" aria-label="Unmoved Studios home">unmoved<span>®</span></a>
-    <nav class="navlinks" id="site-nav" aria-label="Main navigation">
-      <a href="#work">Selected work</a><a href="#about">About</a><a href="#services">What we do</a><a class="nav-cta" href="#contact">Start a project ↗</a>
-    </nav>
-    <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav">Menu +</button>
-  </header>
-  <main>
-    <section class="hero" id="home" aria-label="Unmoved Studios introduction">
-      <div class="hero-image" role="img" aria-label="Cinematic view inside a film theatre"></div>
-      <div class="hero-content">
-        <div class="hero-kicker"><span class="live-dot"></span> Independent production studio · Everywhere</div>
-        <h1>Make<br>something <span class="hero-last">that moves.</span></h1>
-        <div class="hero-bottom"><p>We bring good people and big ideas together to make work that stays with you.</p><a class="scroll-cue" href="#work">Scroll to explore</a></div>
+  <div class="page-shell">
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <a href="#top" class="brand" aria-label="Unmoved home">
+          <span class="brand-mark">unmoved<span class="reg">.studio</span></span>
+        </a>
+        <nav class="nav" aria-label="Main navigation">
+          <a href="#work">Selected work</a>
+          <a href="#about">About</a>
+          <a href="#studio">Studio</a>
+          <a href="#contact" class="nav-cta">Start a project</a>
+        </nav>
       </div>
-    </section>
-    <div class="ticker" aria-hidden="true"><div class="ticker-track"><span>Film <b>✳</b> Stories <b>✳</b> People <b>✳</b> Purpose <b>✳</b> Production <b>✳</b> A little bit of everything <b>✳</b></span><span>Film <b>✳</b> Stories <b>✳</b> People <b>✳</b> Purpose <b>✳</b> Production <b>✳</b> A little bit of everything <b>✳</b></span></div></div>
-    <section class="intro wrap reveal" id="about">
-      <div class="intro-label"><span class="eyebrow">01 — A little about us</span><span class="asterisk" aria-hidden="true">✳</span></div>
-      <div><h2>Independent by nature.<br><em>Together</em> by design.</h2><p class="intro-note">Unmoved is a creative production studio for ideas with something to say. We make films, campaigns, and visual worlds with curiosity, care, and a healthy disregard for the expected.</p></div>
-    </section>
-    <section class="work wrap" id="work">
-      <div class="section-head"><h2>Selected work</h2><p>02 — Things we've made</p></div>
-      <div class="filters" role="group" aria-label="Filter projects"><button class="filter active" data-filter="all" aria-pressed="true">All work</button><button class="filter" data-filter="film" aria-pressed="false">Film</button><button class="filter" data-filter="campaign" aria-pressed="false">Campaign</button><button class="filter" data-filter="culture" aria-pressed="false">Culture</button></div>
-      <div class="projects">
-        <a class="project reveal" href="#contact" data-category="film"><div class="project-image"><img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1200&q=85" alt="A film camera on a dark set" loading="lazy"></div><div class="project-meta"><span class="project-title">A world of our own</span><span class="project-type">Film · 2025</span></div></a>
-        <a class="project reveal" href="#contact" data-category="campaign"><div class="project-image"><img src="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=1200&q=85" alt="Crowd gathered beneath dramatic event lights" loading="lazy"></div><div class="project-meta"><span class="project-title">Room for more</span><span class="project-type">Campaign · 2025</span></div></a>
-        <a class="project reveal" href="#contact" data-category="culture"><div class="project-image"><img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1200&q=85" alt="Musician performing in warm stage light" loading="lazy"></div><div class="project-meta"><span class="project-title">The sound between us</span><span class="project-type">Culture · 2024</span></div></a>
-        <a class="project reveal" href="#contact" data-category="film"><div class="project-image"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=85" alt="Sunlit landscape with distant mountains" loading="lazy"></div><div class="project-meta"><span class="project-title">Somewhere, slowly</span><span class="project-type">Film · 2024</span></div></a>
+    </header>
+
+    <main id="top">
+      <section class="hero container">
+        <div class="hero-panel">
+          <div class="hero-image" aria-hidden="true"></div>
+          <div class="hero-overlay" aria-hidden="true"></div>
+          <div class="hero-content">
+            <div class="eyebrow">Independent production studio</div>
+            <h1>Make <span class="italic">something</span><br>that moves.</h1>
+            <div class="hero-meta">
+              <p>We build cinematic stories, cultural work, images and campaigns for people with ambitious ideas and a long view.</p>
+              <a href="#work" class="scroll-tag">Explore the work</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>Film · Stories · Culture · Campaigns · Production · Motion · Visual worlds ·</span>
+          <span>Film · Stories · Culture · Campaigns · Production · Motion · Visual worlds ·</span>
+        </div>
       </div>
-    </section>
-    <section class="manifesto" id="manifesto"><div class="eyebrow">03 — What we believe</div><blockquote class="reveal">The best work doesn't just get <em>noticed.</em><br>It makes you <em>feel something.</em></blockquote><div class="manifesto-byline"><p>We believe the way you make something matters just as much as what you make.</p><span class="eyebrow">Good work. Good people. Good energy.</span></div></section>
-    <section class="services wrap" id="services"><div class="services-head"><h2>From first thought<br>to <em style="font-family:var(--serif)">final frame.</em></h2><p>A nimble team, a thoughtful process, and the right people around the table at every step.</p></div><div class="service-list"><div class="service"><span class="service-num">01</span><h3>Creative & strategy</h3><span>Find the feeling</span></div><div class="service"><span class="service-num">02</span><h3>Film & photography</h3><span>Make it real</span></div><div class="service"><span class="service-num">03</span><h3>Production</h3><span>Make it happen</span></div><div class="service"><span class="service-num">04</span><h3>Post & finishing</h3><span>Bring it home</span></div></div></section>
-    <section class="contact" id="contact"><div class="contact-top"><span class="eyebrow">04 — Your turn</span><span class="eyebrow">Have a good one in mind?</span></div><h2>Let's make<br><em>something matter.</em></h2><a class="contact-link" href="mailto:hello@unmoved.studio">Tell us what you're thinking <span>↗</span></a><footer class="footer"><span>© Unmoved Studios 2025</span><div class="footer-links"><a href="#work">Work</a><a href="#about">About</a><a href="#services">Services</a></div><span>Independent by nature.</span></footer></section>
-  </main>
+
+      <section class="about container" id="about">
+        <div class="about-grid">
+          <div class="about-mark">
+            <span class="eyebrow" style="color: var(--muted);">01 — studio</span>
+            <div class="large-symbol">∿</div>
+          </div>
+          <div class="about-copy">
+            <h2>Independent by nature.<br><em>Together</em> by design.</h2>
+            <p>Unmoved makes work for brands, institutions and cultural organisations that need clarity, feeling and a point of view. We move between production, direction and finishing with a rigorous creative eye and a practical approach.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="projects container" id="work">
+        <div class="section-head">
+          <h3>Selected work</h3>
+          <span class="counter">02 — 04 projects</span>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card" data-title="A World of Our Own" data-index="01" data-category="Film" data-description="A visual essay about belonging, time and the quiet architecture of intimate rituals." data-long="We developed a slow, immersive storytelling approach that balanced observational footage with a highly textured sound and editorial rhythm. The result was an atmospheric portrait that felt like memory rather than inventory." data-image="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80" data-year="2025" data-role="Creative direction · Production">
+            <div class="project-outer">
+              <div class="project-face project-front">
+                <div class="project-image">
+                  <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80" alt="A World of Our Own">
+                </div>
+                <div class="project-meta">
+                  <div>
+                    <div class="project-index">01</div>
+                    <div class="project-name">A World of Our Own</div>
+                  </div>
+                  <div class="project-badge">Film</div>
+                </div>
+              </div>
+              <div class="project-face project-back">
+                <div class="project-back-header">
+                  <div class="project-back-index">01 / film</div>
+                  <button type="button" class="project-back-close" aria-label="Close project">×</button>
+                </div>
+                <div>
+                  <h4>A World of Our Own</h4>
+                  <p>A visual essay about belonging, time and the quiet architecture of intimate rituals.</p>
+                  <div class="project-meta-stack">
+                    <span class="pill">Edit</span>
+                    <span class="pill">Direction</span>
+                    <span class="pill">Production</span>
+                  </div>
+                </div>
+                <div class="project-back-actions">
+                  <span class="project-link">Expand project</span>
+                  <span class="project-badge">2025</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-title="Room for More" data-index="02" data-category="Campaign" data-description="A cultural campaign translating a complex idea into a resonant public-facing platform." data-long="The challenge was to make an institutional message feel alive. We created a campaign language built around slow motion, close framing and generous typography that invited people in rather than pushed them away." data-image="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1200&q=80" data-year="2025" data-role="Brand direction · Storytelling">
+            <div class="project-outer">
+              <div class="project-face project-front">
+                <div class="project-image">
+                  <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1200&q=80" alt="Room for More">
+                </div>
+                <div class="project-meta">
+                  <div>
+                    <div class="project-index">02</div>
+                    <div class="project-name">Room for More</div>
+                  </div>
+                  <div class="project-badge">Campaign</div>
+                </div>
+              </div>
+              <div class="project-face project-back">
+                <div class="project-back-header">
+                  <div class="project-back-index">02 / campaign</div>
+                  <button type="button" class="project-back-close" aria-label="Close project">×</button>
+                </div>
+                <div>
+                  <h4>Room for More</h4>
+                  <p>A cultural campaign translating a complex idea into a resonant public-facing platform.</p>
+                  <div class="project-meta-stack">
+                    <span class="pill">Strategy</span>
+                    <span class="pill">Campaign</span>
+                    <span class="pill">Visual systems</span>
+                  </div>
+                </div>
+                <div class="project-back-actions">
+                  <span class="project-link">Expand project</span>
+                  <span class="project-badge">2025</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-title="The Sound Between Us" data-index="03" data-category="Culture" data-description="A portrait-driven documentary approach made to feel intimate, tactile and deeply human." data-long="We built a rhythm around conversation, pauses, textures and place — editing the story to preserve emotion without losing narrative clarity. The film lives in the small details: breath, silence, gesture and atmosphere." data-image="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1200&q=80" data-year="2024" data-role="Direction · Editing">
+            <div class="project-outer">
+              <div class="project-face project-front">
+                <div class="project-image">
+                  <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1200&q=80" alt="The Sound Between Us">
+                </div>
+                <div class="project-meta">
+                  <div>
+                    <div class="project-index">03</div>
+                    <div class="project-name">The Sound Between Us</div>
+                  </div>
+                  <div class="project-badge">Culture</div>
+                </div>
+              </div>
+              <div class="project-face project-back">
+                <div class="project-back-header">
+                  <div class="project-back-index">03 / culture</div>
+                  <button type="button" class="project-back-close" aria-label="Close project">×</button>
+                </div>
+                <div>
+                  <h4>The Sound Between Us</h4>
+                  <p>A portrait-driven documentary approach made to feel intimate, tactile and deeply human.</p>
+                  <div class="project-meta-stack">
+                    <span class="pill">Documentary</span>
+                    <span class="pill">Audio</span>
+                    <span class="pill">Portraiture</span>
+                  </div>
+                </div>
+                <div class="project-back-actions">
+                  <span class="project-link">Expand project</span>
+                  <span class="project-badge">2024</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-title="Somewhere, Slowly" data-index="04" data-category="Film" data-description="A contemplative short film exploring place, weather and the rituals of arrival." data-long="The film was shaped through a simple but intimate visual grammar: long takes, patient framing and a restrained palette that mirrored environmental movement and change over time." data-image="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1200&q=80" data-year="2024" data-role="Direction · Production · Post">
+            <div class="project-outer">
+              <div class="project-face project-front">
+                <div class="project-image">
+                  <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1200&q=80" alt="Somewhere, Slowly">
+                </div>
+                <div class="project-meta">
+                  <div>
+                    <div class="project-index">04</div>
+                    <div class="project-name">Somewhere, Slowly</div>
+                  </div>
+                  <div class="project-badge">Film</div>
+                </div>
+              </div>
+              <div class="project-face project-back">
+                <div class="project-back-header">
+                  <div class="project-back-index">04 / film</div>
+                  <button type="button" class="project-back-close" aria-label="Close project">×</button>
+                </div>
+                <div>
+                  <h4>Somewhere, Slowly</h4>
+                  <p>A contemplative short film exploring place, weather and the rituals of arrival.</p>
+                  <div class="project-meta-stack">
+                    <span class="pill">Short film</span>
+                    <span class="pill">Cinematography</span>
+                    <span class="pill">Post</span>
+                  </div>
+                </div>
+                <div class="project-back-actions">
+                  <span class="project-link">Expand project</span>
+                  <span class="project-badge">2024</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="studio container" id="studio">
+        <div class="studio-grid">
+          <div class="studio-intro">
+            <div class="eyebrow" style="color: var(--muted);">03 — what we do</div>
+            <h3>From first thought<br>to final frame.</h3>
+            <p>We move between creative strategy, production, editorial, visual language and finishing — building teams around the right skills for each stage of the work.</p>
+          </div>
+
+          <div class="process">
+            <div class="process-row">
+              <div class="process-number">01</div>
+              <h4>Creative direction</h4>
+              <span>Find the feeling</span>
+            </div>
+            <div class="process-row">
+              <div class="process-number">02</div>
+              <h4>Production</h4>
+              <span>Make it real</span>
+            </div>
+            <div class="process-row">
+              <div class="process-number">03</div>
+              <h4>Edit and finishing</h4>
+              <span>Bring it home</span>
+            </div>
+            <div class="process-row">
+              <div class="process-number">04</div>
+              <h4>Campaign rollout</h4>
+              <span>Keep it moving</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="manifesto">
+        <div class="container manifesto-inner">
+          <div class="manifesto-copy">
+            <div class="eyebrow">04 — manifesto</div>
+            <blockquote>The best work does not just get <em>noticed.</em><br>It stays with you.</blockquote>
+          </div>
+          <div class="manifesto-note">Good work. Good people. Good energy.</div>
+        </div>
+      </section>
+
+      <section class="contact container" id="contact">
+        <div class="contact-shell">
+          <h3>Let’s make<br><em>something matter.</em></h3>
+          <a class="cta" href="mailto:hello@unmoved.studio">hello@unmoved.studio</a>
+        </div>
+
+        <footer class="footer">
+          <span>© Unmoved Studios 2025</span>
+          <div class="footer-links">
+            <a href="#work">Work</a>
+            <a href="#about">About</a>
+            <a href="#studio">Studio</a>
+          </div>
+          <span>Independent by nature</span>
+        </footer>
+      </section>
+    </main>
+  </div>
+
+  <div class="project-modal" id="projectModal" aria-hidden="true">
+    <div class="project-modal-panel" role="dialog" aria-modal="true" aria-labelledby="projectTitle">
+      <div class="modal-media">
+        <img id="modalImage" src="" alt="" />
+      </div>
+      <div class="modal-copy">
+        <div class="modal-top">
+          <div class="modal-index" id="modalIndex">01 / film</div>
+          <button class="close-modal" type="button" aria-label="Close project panel">×</button>
+        </div>
+        <h4 id="projectTitle">Title</h4>
+        <p class="lede" id="projectDescription">Description</p>
+        <div class="meta" id="projectMetaTags">
+          <span class="pill">Direction</span>
+        </div>
+        <div class="facts">
+          <div class="fact-row"><span>Year</span><strong id="projectYear">2025</strong></div>
+          <div class="fact-row"><span>Role</span><strong id="projectRole">Creative direction</strong></div>
+          <div class="fact-row"><span>Category</span><strong id="projectCategory">Film</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script>
-    const menuButton=document.querySelector('.menu-toggle');
-    const nav=document.querySelector('.navlinks');
-    menuButton.addEventListener('click',()=>{const open=menuButton.getAttribute('aria-expanded')!=='true';menuButton.setAttribute('aria-expanded',String(open));menuButton.textContent=open?'Close −':'Menu +';nav.classList.toggle('open',open)});
-    nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{nav.classList.remove('open');menuButton.setAttribute('aria-expanded','false');menuButton.textContent='Menu +'}));
-    document.querySelectorAll('.filter').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(item=>{item.classList.remove('active');item.setAttribute('aria-pressed','false')});button.classList.add('active');button.setAttribute('aria-pressed','true');const category=button.dataset.filter;document.querySelectorAll('.project').forEach(project=>project.classList.toggle('hidden',category!=='all'&&project.dataset.category!==category))}));
-    const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});
-    document.querySelectorAll('.reveal').forEach(element=>observer.observe(element));
+    const projectCards = document.querySelectorAll('.project-card');
+    const modal = document.getElementById('projectModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalTitle = document.getElementById('projectTitle');
+    const modalIndex = document.getElementById('modalIndex');
+    const modalDescription = document.getElementById('projectDescription');
+    const modalMetaTags = document.getElementById('projectMetaTags');
+    const modalYear = document.getElementById('projectYear');
+    const modalRole = document.getElementById('projectRole');
+    const modalCategory = document.getElementById('projectCategory');
+    const closeModalButton = document.querySelector('.close-modal');
+
+    const setProject = (card) => {
+      const title = card.dataset.title;
+      const index = card.dataset.index;
+      const category = card.dataset.category;
+      const description = card.dataset.description;
+      const long = card.dataset.long;
+      const image = card.dataset.image;
+      const year = card.dataset.year;
+      const role = card.dataset.role;
+
+      modalImage.src = image;
+      modalImage.alt = title;
+      modalTitle.textContent = title;
+      modalIndex.textContent = `${index} / ${category.toLowerCase()}`;
+      modalDescription.textContent = long || description;
+      modalYear.textContent = year;
+      modalRole.textContent = role;
+      modalCategory.textContent = category;
+
+      const tags = [
+        'Direction',
+        category,
+        'Production'
+      ];
+      modalMetaTags.innerHTML = tags.map(tag => `<span class="pill">${tag}</span>`).join('');
+    };
+
+    projectCards.forEach((card) => {
+      const close = card.querySelector('.project-back-close');
+      const flipTarget = card.querySelector('.project-outer');
+
+      card.addEventListener('click', (event) => {
+        if (event.target.closest('.project-back-close')) {
+          event.stopPropagation();
+          card.classList.remove('is-flipped');
+          return;
+        }
+
+        if (!card.classList.contains('is-flipped')) {
+          card.classList.add('is-flipped');
+        }
+
+        setProject(card);
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden', 'false');
+      });
+
+      close?.addEventListener('click', (event) => {
+        event.stopPropagation();
+        card.classList.remove('is-flipped');
+      });
+
+      flipTarget?.addEventListener('click', (event) => {
+        if (event.target.closest('.project-link')) {
+          setProject(card);
+          modal.classList.add('open');
+          modal.setAttribute('aria-hidden', 'false');
+        }
+      });
+    });
+
+    closeModalButton.addEventListener('click', () => {
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+      projectCards.forEach(card => card.classList.remove('is-flipped'));
+    });
+
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) {
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden', 'true');
+        projectCards.forEach(card => card.classList.remove('is-flipped'));
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden', 'true');
+        projectCards.forEach(card => card.classList.remove('is-flipped'));
+      }
+    });
   </script>
 </body>
 </html>
