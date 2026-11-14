@@ -55,14 +55,32 @@
     .section-head span{font:9px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
     .film-frame{position:relative;background:#111;aspect-ratio:16/9}
     .film-frame video,.film-frame iframe{width:100%;height:100%;border:0;object-fit:cover}
+    .media-carousel{position:relative;margin-top:28px}
+    .media-track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
+    .media-track::-webkit-scrollbar{display:none}
+    .media-slide{flex:0 0 100%;min-width:0;margin:0;scroll-snap-align:start}
+    .media-slide-media{width:100%;aspect-ratio:16/9;background:#111;overflow:hidden}
+    .media-slide-media img,.media-slide-media video,.media-slide-media iframe{display:block;width:100%;height:100%;object-fit:contain;border:0}
+    .media-slide figcaption{display:flex;justify-content:space-between;gap:20px;margin-top:12px;font:9px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+    .media-carousel-controls{display:flex;align-items:center;justify-content:space-between;margin-top:18px}
+    .media-carousel-buttons{display:flex;gap:8px}
+    .media-carousel-buttons button{width:42px;height:42px;border:1px solid var(--line);border-radius:50%;background:transparent;color:var(--ink);cursor:pointer;font-size:18px}
+    .media-carousel-count{font:9px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
     .film-placeholder{display:grid;place-items:center;width:100%;height:100%;color:var(--paper);font:10px var(--mono);letter-spacing:.12em;text-transform:uppercase}
     .story{padding:clamp(60px,9vw,120px) var(--gutter);background:var(--green);color:var(--paper)}
-    .story-grid{display:grid;grid-template-columns:.65fr 1.35fr;gap:8vw}
-    .story .section-number{color:var(--acid)}
-    .story h2{margin:0;font:600 clamp(42px,7vw,92px)/.94 var(--display);letter-spacing:-.035em;text-transform:uppercase}
+    .story-grid{display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(36px,6vw,92px);row-gap:30px;align-items:start}
+    .story .section-number{grid-column:1/-1;color:var(--acid)}
+    .story-copy-column{min-width:0}
+    .story h2{margin:0 0 24px;font:600 clamp(42px,5.6vw,76px)/.94 var(--display);letter-spacing:-.035em;text-transform:uppercase}
     .story h2 em{font:italic .85em var(--serif);text-transform:none}
-    .story-copy{max-width:760px;font-size:clamp(15px,1.5vw,18px);line-height:1.85;color:rgba(233,228,220,.84)}
+    .story-copy{max-width:620px;font-size:clamp(15px,1.35vw,17px);line-height:1.85;color:rgba(233,228,220,.84)}
     .story-copy p:first-child{margin-top:0}
+    .story .making-of{margin-top:0;padding-top:0;border-top:0;min-width:0}
+    .story .making-of-top{margin-bottom:18px}
+    .story .making-of-top h3{font-size:clamp(24px,3vw,38px)}
+    .story .making-of-track{gap:12px}
+    .story .making-of-slide{flex-basis:88%}
+    .story .making-of-slide img{height:clamp(260px,34vw,430px)}
     .gallery{padding:clamp(70px,10vw,130px) var(--gutter)}
     .gallery-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(12px,2vw,26px);align-items:start}
     .gallery-item{margin:0}
@@ -70,6 +88,37 @@
     .gallery-item:nth-child(2){margin-top:13vw}
     .gallery-item:nth-child(3){grid-column:1/-1;width:78%;margin:0 auto}
     .gallery-item figcaption{margin-top:10px;font:9px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+
+    .making-of{margin-top:clamp(48px,7vw,92px);padding-top:clamp(28px,4vw,48px);border-top:1px solid rgba(233,228,220,.28)}
+    .making-of-top{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:22px}
+    .making-of-top h3{margin:0;font:500 clamp(25px,3.6vw,44px)/.95 var(--display);letter-spacing:-.025em;text-transform:uppercase}
+    .making-of-top span{font:9px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:rgba(233,228,220,.62)}
+    .making-of-track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:0 0 14px;scrollbar-width:thin;scrollbar-color:var(--acid) rgba(233,228,220,.15)}
+    .making-of-slide{flex:0 0 min(72%,620px);margin:0;scroll-snap-align:start}
+    .making-of-slide img{display:block;width:100%;height:clamp(220px,42vw,480px);object-fit:cover;background:rgba(233,228,220,.08)}
+    .making-of-slide figcaption{margin-top:10px;font:9px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:rgba(233,228,220,.62)}
+    .making-of-controls{display:flex;gap:8px}
+    .making-of-controls button{width:38px;height:38px;border:1px solid rgba(233,228,220,.45);border-radius:50%;background:transparent;color:var(--paper);font-size:18px;cursor:pointer}
+    .making-of-controls button:hover{background:var(--acid);color:var(--ink);border-color:var(--acid)}
+    .making-of-empty{padding:28px;border:1px dashed rgba(233,228,220,.35);font:9px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:rgba(233,228,220,.62)}
+    .poster-screenings{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(38px,7vw,110px);padding:clamp(65px,9vw,115px) var(--gutter);background:#d8c65c;align-items:start}
+    .poster-column,.screenings-column{min-width:0}
+    .poster-wrap{width:min(100%,390px);margin:28px auto 20px;background:rgba(21,23,19,.08);padding:12px}
+    .poster-wrap img{display:block;width:100%;aspect-ratio:2/3;object-fit:cover}
+    .poster-placeholder{aspect-ratio:2/3;display:grid;place-items:center;text-align:center;padding:28px;border:1px dashed rgba(21,23,19,.4);font:10px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#5f5b4e}
+    .poster-caption{max-width:390px;margin:0 auto;font-size:12px;line-height:1.6;color:#41423c}
+    .screenings-column{padding:0 0 0 clamp(0px,2vw,24px)}
+    .screenings-column h2{margin:28px 0 20px;font:600 clamp(42px,6.5vw,82px)/.9 var(--display);letter-spacing:-.04em;text-transform:uppercase}
+    .screenings-column h2 em{font-family:var(--serif);font-weight:400;text-transform:none}
+    .screening-intro{max-width:580px;margin:0 0 34px;font-size:clamp(14px,1.35vw,17px);line-height:1.75;color:#41423c}
+    .festival-list{border-top:1px solid rgba(21,23,19,.35)}
+    .festival-row{display:grid;grid-template-columns:1fr 1.2fr .5fr;gap:16px;padding:17px 0;border-bottom:1px solid rgba(21,23,19,.25);align-items:center}
+    .festival-row strong{font-size:13px;font-weight:600}
+    .festival-row span{font:9px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#55564f}
+    .release-note{margin-top:28px;font:10px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
+    .media-section{padding:clamp(70px,10vw,130px) var(--gutter)}
+    .media-section .film-frame{margin-bottom:0}
+    .empty-note{font:10px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
     .credits{padding:clamp(65px,9vw,115px) var(--gutter);background:#d8c65c}
     .credits-top{display:flex;justify-content:space-between;align-items:end;gap:20px;padding-bottom:18px;border-bottom:1px solid var(--line)}
     .credits h2{margin:0;font:600 clamp(42px,7vw,90px)/.9 var(--display);text-transform:uppercase;letter-spacing:-.04em}
@@ -86,10 +135,12 @@
     .next-arrow{font-size:clamp(38px,6vw,72px)}
     footer{padding:24px var(--gutter);display:flex;justify-content:space-between;gap:20px;background:var(--ink);color:var(--paper);font:9px var(--mono);letter-spacing:.1em;text-transform:uppercase}
     @media(max-width:760px){
+      .media-slide{flex-basis:100%}.media-slide-media{aspect-ratio:4/3}
       .site-nav{min-height:64px}.hero{min-height:82svh}.hero-content{padding-top:130px}.hero-bottom{align-items:flex-start;flex-direction:column}.hero-meta{gap:18px}
-      .intro,.story-grid{grid-template-columns:1fr;gap:34px}.intro-aside{flex-direction:row;align-items:end}.intro-mark{font-size:70px}
+      .intro,.story-grid{grid-template-columns:1fr;gap:34px}.story .section-number{grid-column:auto}.story .making-of{margin-top:10px}.intro-aside{flex-direction:row;align-items:end}.intro-mark{font-size:70px}
       .facts{grid-template-columns:1fr 1fr;row-gap:24px}.section-head{align-items:flex-start;flex-direction:column}.gallery-grid{grid-template-columns:1fr}.gallery-item:nth-child(2){margin-top:0}.gallery-item:nth-child(3){grid-column:auto;width:100%}
-      .credits-list{grid-template-columns:1fr}.next-project{min-height:340px}.next-inner{align-items:flex-start}.next-arrow{font-size:38px}footer{flex-direction:column}
+      .poster-screenings{grid-template-columns:1fr;gap:54px}.poster-wrap{width:min(78%,360px)}.screenings-column{padding:0}.festival-row{grid-template-columns:1fr;gap:7px}
+      .festival-row{grid-template-columns:1fr;gap:7px}.credits-list{grid-template-columns:1fr}.next-project{min-height:340px}.next-inner{align-items:flex-start}.next-arrow{font-size:38px}footer{flex-direction:column}
     }
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important}}
   </style>
@@ -129,30 +180,64 @@
       </div>
     </section>
 
-    <section class="film-section" id="film">
-      <div class="section-head"><h2>Watch the film</h2><span>02 — Film / Trailer</span></div>
-      <div class="film-frame" id="filmFrame">
-        <div class="film-placeholder">Add a film or trailer URL in the project settings</div>
+    <section class="poster-screenings" id="poster">
+      <div class="poster-column">
+        <div class="section-number">02 — Key artwork</div>
+        <div class="poster-wrap" id="posterWrap">
+          <div class="poster-placeholder">Add the official film poster<br>Portrait artwork · 2:3</div>
+        </div>
+        <p class="poster-caption" id="posterCaption">The official poster and key artwork for the project.</p>
+      </div>
+      <div class="screenings-column" id="screenings">
+        <div class="section-number">03 — Festivals / Distribution</div>
+        <h2>Screenings<br><em>&amp; release.</em></h2>
+        <p class="screening-intro" id="screeningIntro">Festival selections, screenings, awards and release information.</p>
+        <div class="festival-list" id="festivalList"></div>
+        <div class="release-note" id="releaseNote"></div>
+      </div>
+    </section>
+
+    <section class="media-section" id="film">
+      <div class="section-head"><h2>Watch &amp; look</h2><span>04 — Trailer / Selected frames</span></div>
+      <div class="media-carousel" id="mediaCarousel">
+        <div class="media-track" id="mediaTrack" aria-label="Trailer and selected film frames"></div>
+        <div class="media-carousel-controls">
+          <div class="media-carousel-count" id="mediaCount" aria-live="polite">01 / 01</div>
+          <div class="media-carousel-buttons">
+            <button type="button" id="mediaPrev" aria-label="Previous media item">←</button>
+            <button type="button" id="mediaNext" aria-label="Next media item">→</button>
+          </div>
+        </div>
       </div>
     </section>
 
     <section class="story">
       <div class="story-grid">
-        <div class="section-number">03 — Behind the project</div>
-        <div>
+        <div class="section-number">05 — Behind the project</div>
+        <div class="story-copy-column">
           <h2 id="storyHeading">The process<br><em>of looking closer.</em></h2>
           <div class="story-copy" id="storyCopy"><p>PROJECT_STORY</p></div>
+        </div>
+        <div class="making-of" id="makingOf">
+            <div class="making-of-top">
+              <div>
+                <span>Behind the scenes / On set</span>
+                <h3>In the making.</h3>
+              </div>
+              <div class="making-of-controls">
+                <button type="button" id="makingPrev" aria-label="Previous behind-the-scenes photos">←</button>
+                <button type="button" id="makingNext" aria-label="Next behind-the-scenes photos">→</button>
+              </div>
+            </div>
+            <div class="making-of-track" id="makingOfTrack" aria-label="Behind-the-scenes photo carousel"></div>
         </div>
       </div>
     </section>
 
-    <section class="gallery">
-      <div class="section-head"><h2>Selected frames</h2><span>04 — Images / Details</span></div>
-      <div class="gallery-grid" id="gallery"></div>
-    </section>
+
 
     <section class="credits">
-      <div class="credits-top"><h2>Credits</h2><span class="eyebrow">05 — The people behind it</span></div>
+      <div class="credits-top"><h2>Credits</h2><span class="eyebrow">06 — The people behind it</span></div>
       <div class="credits-list" id="credits"></div>
     </section>
 
@@ -178,6 +263,9 @@
       kicker: "Unmoved Studios / Selected work",
       year: "2026",
       format: "Non-fiction short film",
+      heroImage: "media/hero.jpg",
+      posterImage: "", // Example: media/poster.jpg
+      posterCaption: "The official poster and key artwork for the project.",
       logline: "A short, evocative sentence that introduces the film and draws the viewer in.",
       introHeading: "A film about <em>what remains.</em>",
       synopsis: "Write the main synopsis here. Aim for a concise paragraph that gives the visitor a sense of the film's subject, world and central question.",
@@ -189,6 +277,7 @@
       ],
       filmEmbed: "", // Example: https://player.vimeo.com/video/000000000
       filmFile: "",  // Example: media/trailer.mp4
+      filmLabel: "Trailer", // Label the player as Trailer or Full film
       storyHeading: "The process<br><em>of looking closer.</em>",
       story: [
         "Use this section to tell the story behind the project: where it began, what questions shaped it and how the film found its form.",
@@ -199,6 +288,14 @@
         {src:"", alt:"Film still two", caption:"02 / Film still"},
         {src:"", alt:"Film still three", caption:"03 / Film still"}
       ],
+      behindScenes: [
+        // Add production photos here: {src:"media/bts-01.jpg", alt:"Crew setting up a shot", caption:"On location / Day one"}
+      ],
+      screeningIntro: "Festival selections, screenings, awards and release information.",
+      festivals: [
+        // Example: {festival:"Festival name", event:"Official selection", year:"2026"}
+      ],
+      releaseNote: "Release information / Coming soon",
       credits: [
         ["Directed by", "Name"],
         ["Produced by", "Name"],
@@ -224,6 +321,19 @@
     $("#introHeading").innerHTML = project.introHeading;
     $("#projectSynopsis").textContent = project.synopsis;
     $("#storyHeading").innerHTML = project.storyHeading;
+    $("#posterCaption").textContent = project.posterCaption || "";
+    $("#screeningIntro").textContent = project.screeningIntro || "";
+    $("#releaseNote").textContent = project.releaseNote || "";
+    const posterWrap = $("#posterWrap");
+    if (project.posterImage) {
+      const poster = document.createElement("img");
+      poster.src = project.posterImage;
+      poster.alt = `${project.title} — official poster`;
+      poster.loading = "lazy";
+      posterWrap.replaceChildren(poster);
+    }
+    const mediaHeading = document.querySelector(".media-section > .section-head");
+    if (mediaHeading) mediaHeading.querySelector("span").textContent = `03 — ${project.filmLabel || "Trailer"} / Selected frames`;
     $("#storyCopy").innerHTML = project.story.map(p => `<p>${escapeHTML(p)}</p>`).join("");
 
     const facts = $("#facts");
@@ -235,30 +345,74 @@
     if (project.heroImage) heroImage.src = project.heroImage;
     else heroImage.remove();
 
-    const filmFrame = $("#filmFrame");
-    if (project.filmEmbed) {
-      const iframe = document.createElement("iframe");
-      iframe.src = project.filmEmbed;
-      iframe.title = `${project.title} — film`;
-      iframe.allow = "autoplay; fullscreen; picture-in-picture";
-      iframe.allowFullscreen = true;
-      filmFrame.replaceChildren(iframe);
-    } else if (project.filmFile) {
-      const video = document.createElement("video");
-      video.controls = true; video.playsInline = true; video.preload = "metadata";
-      const source = document.createElement("source");
-      source.src = project.filmFile; source.type = "video/mp4";
-      video.append(source); filmFrame.replaceChildren(video);
+    // One continuous carousel: trailer first, followed by selected film frames.
+    const mediaTrack = $("#mediaTrack");
+    const mediaItems = [];
+    if (project.filmEmbed || project.filmFile) {
+      mediaItems.push({type:"film", label:project.filmLabel || "Trailer"});
+    }
+    (project.gallery || []).filter(item => item.src).forEach(item => {
+      mediaItems.push({type:"image", ...item});
+    });
+
+    function renderMediaItem(item, index) {
+      if (item.type === "film") {
+        let player = "";
+        if (project.filmEmbed) {
+          player = `<iframe src="${escapeAttr(project.filmEmbed)}" title="${escapeAttr(project.title)} — ${escapeAttr(item.label)}" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>`;
+        } else {
+          player = `<video controls playsinline preload="metadata"><source src="${escapeAttr(project.filmFile)}" type="video/mp4"></video>`;
+        }
+        return `<figure class="media-slide"><div class="media-slide-media">${player}</div><figcaption><span>${escapeHTML(item.label)}</span><span>${String(index + 1).padStart(2, "0")} / ${String(mediaItems.length).padStart(2, "0")}</span></figcaption></figure>`;
+      }
+      return `<figure class="media-slide"><div class="media-slide-media"><img src="${escapeAttr(item.src)}" alt="${escapeAttr(item.alt || "Selected film frame")}" loading="lazy"></div><figcaption><span>${escapeHTML(item.caption || "Selected frame")}</span><span>${String(index + 1).padStart(2, "0")} / ${String(mediaItems.length).padStart(2, "0")}</span></figcaption></figure>`;
     }
 
-    const gallery = $("#gallery");
-    gallery.innerHTML = project.gallery.filter(item => item.src).map(item =>
-      `<figure class="gallery-item"><img src="${escapeAttr(item.src)}" alt="${escapeAttr(item.alt)}" loading="lazy"><figcaption>${escapeHTML(item.caption)}</figcaption></figure>`
-    ).join("");
+    if (mediaItems.length) {
+      mediaTrack.innerHTML = mediaItems.map(renderMediaItem).join("");
+    } else {
+      mediaTrack.innerHTML = '<div class="film-placeholder">Add a trailer and/or selected film frames in the project settings.</div>';
+      $("#mediaPrev").hidden = true;
+      $("#mediaNext").hidden = true;
+      $("#mediaCount").textContent = "No media added";
+    }
+
+    function updateMediaCount() {
+      if (!mediaItems.length) return;
+      const slideWidth = mediaTrack.querySelector(".media-slide").getBoundingClientRect().width + 14;
+      const active = Math.min(mediaItems.length, Math.max(1, Math.round(mediaTrack.scrollLeft / slideWidth) + 1));
+      $("#mediaCount").textContent = `${String(active).padStart(2, "0")} / ${String(mediaItems.length).padStart(2, "0")}`;
+    }
+    $("#mediaPrev").addEventListener("click", () => mediaTrack.scrollBy({left:-mediaTrack.clientWidth, behavior:"smooth"}));
+    $("#mediaNext").addEventListener("click", () => mediaTrack.scrollBy({left:mediaTrack.clientWidth, behavior:"smooth"}));
+    mediaTrack.addEventListener("scroll", () => window.requestAnimationFrame(updateMediaCount), {passive:true});
+
+    const makingTrack = $("#makingOfTrack");
+    const makingImages = (project.behindScenes || []).filter(item => item.src);
+    if (makingImages.length) {
+      makingTrack.innerHTML = makingImages.map((item, index) =>
+        `<figure class="making-of-slide"><img src="${escapeAttr(item.src)}" alt="${escapeAttr(item.alt || "Behind-the-scenes photograph")}" loading="lazy"><figcaption>${escapeHTML(item.caption || `Making of / ${String(index + 1).padStart(2, "0")}`)}</figcaption></figure>`
+      ).join("");
+      $("#makingPrev").addEventListener("click", () => makingTrack.scrollBy({left:-makingTrack.clientWidth * .8, behavior:"smooth"}));
+      $("#makingNext").addEventListener("click", () => makingTrack.scrollBy({left:makingTrack.clientWidth * .8, behavior:"smooth"}));
+    } else {
+      makingTrack.innerHTML = '<div class="making-of-empty">Add behind-the-scenes photographs to the project settings — production stills, location photos, crew moments and images from the making of the film.</div>';
+      $("#makingPrev").hidden = true;
+      $("#makingNext").hidden = true;
+    }
 
     $("#credits").innerHTML = project.credits.map(([role,name]) =>
       `<div class="credit-row"><span>${escapeHTML(role)}</span><strong>${escapeHTML(name)}</strong></div>`
     ).join("");
+
+    const festivalList = $("#festivalList");
+    if (project.festivals && project.festivals.length) {
+      festivalList.innerHTML = project.festivals.map(item =>
+        `<div class="festival-row"><strong>${escapeHTML(item.festival || "")}</strong><span>${escapeHTML(item.event || "")}</span><span>${escapeHTML(item.year || "")}</span></div>`
+      ).join("");
+    } else {
+      festivalList.innerHTML = '<div class="festival-row"><strong>Festival announcements</strong><span>Add festival selections, screenings or awards in the project settings</span><span>—</span></div>';
+    }
 
     $("#nextTitle").textContent = project.next.title;
     $("#nextProject").href = project.next.href;
